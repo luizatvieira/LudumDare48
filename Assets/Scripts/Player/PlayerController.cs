@@ -19,18 +19,17 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 movementVector = movementValue.Get<Vector2>();
         movement = movementVector.x;
-        Debug.Log("bla");
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("wow much colision");
-        if (collision.gameObject.tag == "Collectable")
-        {
-            //collision.gameObject.SendMessage("ApplyDamage", 10);
-        }
-        Destroy(collision.gameObject);
-    }
+    // void OnCollisionEnter2D(Collision2D collision)
+    // {
+    //     Debug.Log("wow much colision");
+    //     if (collision.gameObject.tag == "Collectable")
+    //     {
+    //         //collision.gameObject.SendMessage("ApplyDamage", 10);
+    //     }
+    //     Destroy(collision.gameObject);
+    // }
 
     // Update is called once per frame
     void Update()
