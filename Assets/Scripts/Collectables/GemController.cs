@@ -19,21 +19,21 @@ public class GemController : MonoBehaviour
         int chance = Random.Range(0,100);
         int chosen = 0;
 
-        if ( chance <= rockChance) {
+        if ( chance < rockChance) {
             chosen = 0;
-        } else if ( chance <= copperChance ) {
+        } else if ( chance < copperChance ) {
             chosen = 1;
-        } else if ( chance <= ironChance ) {
+        } else if ( chance < ironChance ) {
             chosen = 2;
-        } else if ( chance <= goldChance ) {
+        } else if ( chance < goldChance ) {
             chosen = 3;
-        } else if ( chance <= emeraldChance ) {
+        } else if ( chance < emeraldChance ) {
             chosen = 4;
-        } else if (chance <= diamondChance ) {
+        } else {
             chosen = 5;
         }
         
-        spriteRenderer.sprite = gemSprite[0];
+        spriteRenderer.sprite = gemSprite[chosen];
         value = ( (chosen * 20) + 1 ) * chance;
     }
 
@@ -45,11 +45,9 @@ public class GemController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("wow much colision");
         if (collision.gameObject.tag == "Player")
         {
             AddPoints();
-            //collision.gameObject.SendMessage("ApplyDamage", 10);
         }
         Destroy(gameObject);
     }

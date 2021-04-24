@@ -5,8 +5,10 @@ using UnityEngine;
 public class CollectableSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] collectables;
-    [SerializeField] private float spawnTime = 3f;
-    [SerializeField] private float adjustTime = 10f;
+    [SerializeField] private float spawnTime = 10f;
+    [SerializeField] private float adjustGemTime = 1f;
+    [SerializeField] private float adjustSpawnTime = 10f;
+
 
     [SerializeField] private float gemChance = 60;
     [SerializeField] private float fuelChance = 10;
@@ -31,13 +33,13 @@ public class CollectableSpawner : MonoBehaviour
         diamondChance = 0;
 
         StartCoroutine( SpawnCollectables() );
-        InvokeRepeating( "VariateGemChances", 3.0f, adjustTime );
-        InvokeRepeating( "AdjustSpawnTime", 3.0f,   adjustTime);
+        InvokeRepeating( "VariateGemChances", 3.0f, adjustGemTime );
+        InvokeRepeating( "AdjustSpawnTime", 3.0f,   adjustSpawnTime);
     }
 
     private void AdjustSpawnTime ()
     {
-        spawnTime -= 0.1f;
+        spawnTime -= 0.01f;
     }
 
     private void VariateGemChances ()
