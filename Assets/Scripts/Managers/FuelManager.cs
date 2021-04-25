@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class FuelController : MonoBehaviour
+public class FuelManager : MonoBehaviour
 {
     [SerializeField] private Slider slider;
     private float currentFuel;
@@ -23,7 +23,7 @@ public class FuelController : MonoBehaviour
         slider.value = currentFuel/maxFuel;
     }
 
-    public void AddFuel( float receivedFuel )
+    public void AddFuel( int receivedFuel )
     {
         currentFuel += receivedFuel;
     }

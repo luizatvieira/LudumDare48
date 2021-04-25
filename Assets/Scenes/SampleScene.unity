@@ -444,7 +444,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1044256144}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82e56570651630f42aa16a2263160c01, type: 3}
+  m_Script: {fileID: 11500000, guid: 1fe61ce58ab239043ac14957b1b840ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1002974781}
@@ -529,10 +529,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectables:
   - {fileID: 8698675814475450359, guid: 37434e05efdd463498c920389ee9e4a6, type: 3}
-  - {fileID: 8698675814475450359, guid: 37434e05efdd463498c920389ee9e4a6, type: 3}
-  - {fileID: 8698675814475450359, guid: 37434e05efdd463498c920389ee9e4a6, type: 3}
-  spawnTime: 1
-  adjustTime: 10
+  - {fileID: 1186943167567520511, guid: c01d9bd67acdc2a4d92357156368b8cd, type: 3}
+  - {fileID: 7137454931746228333, guid: ae84faf29a62f264fab777199b3e29fa, type: 3}
+  spawnTime: 5
+  adjustSpawnTime: 10
   gemChance: 60
   fuelChance: 10
 --- !u!4 &1238983511
