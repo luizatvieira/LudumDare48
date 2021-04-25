@@ -7,6 +7,11 @@ public class GemController : MonoBehaviour
     [SerializeField] private Sprite[] gemSprite;
     private SpriteRenderer spriteRenderer;
     private int value;
+    static private int rockValue = 50;
+    static private int copperValue = 100;
+    static private int ironValue = 200;
+    static private int goldValue = 400;
+    static private int emeraldValue = 1000;
 
     // Start is called before the first frame update
     void Awake()
@@ -14,27 +19,28 @@ public class GemController : MonoBehaviour
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
-    public void DefineGem( float rockChance, float copperChance, float ironChance, float goldChance, float emeraldChance, float diamondChance ) 
+    public void DefineGem( int time ) 
     {
-        int chance = Random.Range(0,100);
+        int valueMultiplier = Random.Range(0,100);
         int chosen = 0;
+        value = valueMultiplier * ( 1 + time );
+        Debug.Log(valueMultiplier +" "+ Time.deltaTime +" "+ value );
 
-        if ( chance < rockChance) {
+        if ( value < rockValue) {
             chosen = 0;
-        } else if ( chance < copperChance ) {
+        } else if ( value < copperValue ) {
             chosen = 1;
-        } else if ( chance < ironChance ) {
+        } else if ( value < ironValue ) {
             chosen = 2;
-        } else if ( chance < goldChance ) {
+        } else if ( value < goldValue ) {
             chosen = 3;
-        } else if ( chance < emeraldChance ) {
+        } else if ( value < emeraldValue ) {
             chosen = 4;
         } else {
             chosen = 5;
         }
         
         spriteRenderer.sprite = gemSprite[chosen];
-        value = ( (chosen * 20) + 1 ) * chance;
     }
 
     // Update is called once per frame
