@@ -9,11 +9,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject upgradeUI;
     private GameObject currentSpawner;
     private ArmourManager armourManager;
+    private FuelManager fuelManager;
     static private Vector3 spawnerPosition = new Vector3( 0, -6.73f,0 );
 
     void Awake()
     {
         armourManager = GetComponent<ArmourManager>();
+        fuelManager = GetComponent<FuelManager>();
     }
 
     void Start()
@@ -26,14 +28,17 @@ public class GameManager : MonoBehaviour
         Destroy(currentSpawner);
         upgradeUI.SetActive(true);
         earthAnim.SetBool("isGameRunning", false);
+        fuelManager.isGameRunning = false;
     }
 
     public void StartPhase()
     {
+        fuelManager.isGameRunning = true;
         currentSpawner = Instantiate(collectableSpawner, spawnerPosition ,Quaternion.identity);
         upgradeUI.SetActive(false);
         earthAnim.SetBool("isGameRunning", true);
         armourManager.ResetArmour();
+        fuelManager.ResetFuel();
     }
 
     void PauseGame ()

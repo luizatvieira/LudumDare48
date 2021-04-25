@@ -62,7 +62,7 @@ public class MoneyManager : MonoBehaviour
         }
     }
 
-    public void BuyFueld()
+    public void BuyFuel()
     {
         if ( currentMoney >= fuelCost )
         {
