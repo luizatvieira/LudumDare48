@@ -10,7 +10,7 @@ public class CollectableSpawner : MonoBehaviour
 
 
     [SerializeField] private float gemChance = 60;
-    [SerializeField] private float fuelChance = 10;
+    public float fuelChance = 70;//10%
 
     // Update is called once per frame
     void Start()

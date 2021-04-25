@@ -208,7 +208,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1044256147}
         m_TargetAssemblyTypeName: MoneyManager, Assembly-CSharp
-        m_MethodName: BuyFuel
+        m_MethodName: BuySafety
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1755,8 +1755,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyText: {fileID: 1096631649}
   upgadeArmourButton: {fileID: 834578629}
+  upgadeSafetyButton: {fileID: 14814865}
   armourUpText: {fileID: 273160802}
   fuelUpText: {fileID: 801443796}
+  safetyUpText: {fileID: 1813810222}
 --- !u!114 &1044256148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1772,6 +1774,7 @@ MonoBehaviour:
   collectableSpawner: {fileID: 1900037411361920843, guid: e3d8b28cfcb9f3145b87947285a06020, type: 3}
   earthAnim: {fileID: 2071191122}
   upgradeUI: {fileID: 1900150617}
+  fuelChance: 70
 --- !u!114 &1044256149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3389,7 +3392,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: $ 300
+  m_text: $ 600
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

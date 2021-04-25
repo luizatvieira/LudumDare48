@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     private FuelManager fuelManager;
     static private Vector3 spawnerPosition = new Vector3( 0, -6.73f,0 );
 
+    public int fuelChance = 70;
+
     void Awake()
     {
         armourManager = GetComponent<ArmourManager>();
@@ -35,6 +37,7 @@ public class GameManager : MonoBehaviour
     {
         fuelManager.isGameRunning = true;
         currentSpawner = Instantiate(collectableSpawner, spawnerPosition ,Quaternion.identity);
+        currentSpawner.GetComponent<CollectableSpawner>().fuelChance = fuelChance;
         upgradeUI.SetActive(false);
         earthAnim.SetBool("isGameRunning", true);
         armourManager.ResetArmour();
