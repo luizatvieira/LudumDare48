@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class FuelController : MonoBehaviour
 {
-    [SerializeField] private FuelManager fuelManager;
+    private FuelManager fuelManager;
+
+    void Awake()
+    {
+        fuelManager = FindObjectOfType<FuelManager>();
+    }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")

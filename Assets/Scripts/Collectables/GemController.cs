@@ -13,10 +13,14 @@ public class GemController : MonoBehaviour
     static private int goldValue = 400;
     static private int emeraldValue = 1000;
 
+    private MoneyManager moneyManager;
+
     // Start is called before the first frame update
     void Awake()
     {
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        moneyManager = FindObjectOfType<MoneyManager>();
+        spriteRenderer.sprite = gemSprite[0];
     }
 
     public void DefineGem( int time ) 
@@ -42,17 +46,11 @@ public class GemController : MonoBehaviour
         spriteRenderer.sprite = gemSprite[chosen];
     }
 
-    // Update is called once per frame
-    public void AddPoints()
-    {
-        
-    }
-
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            AddPoints();
+            moneyManager.AddMoney( value );
         }
         Destroy(gameObject);
     }

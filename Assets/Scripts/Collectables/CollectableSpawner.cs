@@ -33,8 +33,10 @@ public class CollectableSpawner : MonoBehaviour
 
             int chance = Random.Range(0,100);
 
+            Debug.Log(chance);
+
             if ( chance <= gemChance ) {
-                chosen = 1;
+                chosen = 0;
             } else if ( chance <= fuelChance ) {
                 chosen = 1;
             } else //Chooses Explosive
@@ -46,7 +48,7 @@ public class CollectableSpawner : MonoBehaviour
             if (chosen == 1) 
             {
                 GemController gem = collectable.GetComponent<GemController>();
-                gem.DefineGem((int)Time.deltaTime);
+                gem.DefineGem( (int)Time.deltaTime );
             }
         }
     }
