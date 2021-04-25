@@ -33,6 +33,11 @@ public class FuelManager : MonoBehaviour
         }
     }
 
+    public void UpgradeFuel ()
+    {
+        maxFuel += maxFuel;
+    }
+
     public void AddFuel( int receivedFuel )
     {
         currentFuel += receivedFuel;
