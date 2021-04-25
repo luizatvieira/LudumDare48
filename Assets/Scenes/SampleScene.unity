@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 86139254}
   - component: {fileID: 86139253}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Upgrade1Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -285,7 +285,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 86139254}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1044256149}
+        m_TargetAssemblyTypeName: ArmourManager, Assembly-CSharp
+        m_MethodName: AddArmour
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: AddArmour()
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &86139254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1235,6 +1247,7 @@ GameObject:
   - component: {fileID: 1044256146}
   - component: {fileID: 1044256145}
   - component: {fileID: 1044256147}
+  - component: {fileID: 1044256149}
   - component: {fileID: 1044256148}
   m_Layer: 0
   m_Name: GameManager
@@ -1256,6 +1269,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1002974781}
+  usedFuel: 1
+  maxFuel: 100
 --- !u!4 &1044256146
 Transform:
   m_ObjectHideFlags: 0
@@ -1298,6 +1313,20 @@ MonoBehaviour:
   collectableSpawner: {fileID: 1900037411361920843, guid: e3d8b28cfcb9f3145b87947285a06020, type: 3}
   earthAnim: {fileID: 2071191122}
   upgradeUI: {fileID: 1900150617}
+--- !u!114 &1044256149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044256144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 481b062fa8d8d894bb9006848ab9cfc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armourIcon: {fileID: 4151776672951802917, guid: 8bdcdd98e86ea44438019cc7a1056e0f, type: 3}
+  upgadeButton: {fileID: 86139251}
 --- !u!1 &1096631648
 GameObject:
   m_ObjectHideFlags: 0
@@ -3124,7 +3153,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1900150618
 RectTransform:
   m_ObjectHideFlags: 0

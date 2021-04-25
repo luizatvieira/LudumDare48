@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ArmourManager : MonoBehaviour
 {
@@ -8,7 +9,8 @@ public class ArmourManager : MonoBehaviour
     private int currentArmour = 0;
     private GameManager gameManager;
     [SerializeField] private GameObject armourIcon;
-    private GameObject[] armourIcons;
+    [SerializeField] private GameObject upgadeButton;
+    private GameObject[] armourIcons = new GameObject[5];
 
     void Awake()
     {
@@ -20,8 +22,15 @@ public class ArmourManager : MonoBehaviour
     }
     public void AddArmour()
     {
-        maxArmour += 1;
-        armourIcons[maxArmour] = Instantiate( armourIcon, new Vector3( 0 + (float) maxArmour, 0,0 ) ,Quaternion.identity);
+        if (maxArmour<5)
+        {
+            maxArmour += 1;
+            armourIcons[maxArmour-1] = Instantiate( armourIcon, new Vector3( -11.7f + (float) maxArmour, 3.3f,0 ) ,Quaternion.identity);
+            if ( maxArmour == 5 )
+            {
+                upgadeButton.GetComponent<Image>().color = new Color( 140, 123, 64, 1);
+            }
+        }
     }
     public void DecArmour( int damage )
     {
