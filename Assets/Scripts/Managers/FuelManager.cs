@@ -8,8 +8,8 @@ public class FuelManager : MonoBehaviour
     [SerializeField] private Slider slider;
     private GameManager gameManager;
     private float currentFuel;
-    private float usedFuel = 1f;
-    private float maxFuel = 100;
+    [SerializeField] private float usedFuel = 1f;
+    [SerializeField] private float maxFuel = 100;
 
     void Awake()
     {

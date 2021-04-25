@@ -6,10 +6,12 @@ public class ExplosiveController : MonoBehaviour
 {
     [SerializeField] private Sprite[] explosiveSprite;
     private SpriteRenderer spriteRenderer;
+    private ArmourManager armourManager;
     private int damage;
 
     void Awake()
     {
+        armourManager = FindObjectOfType<ArmourManager>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
@@ -24,7 +26,7 @@ public class ExplosiveController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            //DecArmour( damage );
+            armourManager.DecArmour( damage+1 );
         }
         Destroy(gameObject);
     }

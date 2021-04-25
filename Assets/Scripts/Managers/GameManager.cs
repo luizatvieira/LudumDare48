@@ -8,8 +8,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Animator earthAnim;
     [SerializeField] private GameObject upgradeUI;
     private GameObject currentSpawner;
+    private ArmourManager armourManager;
     static private Vector3 spawnerPosition = new Vector3( 0, -6.73f,0 );
-    // Start is called before the first frame update
+
+    void Awake()
+    {
+        armourManager = GetComponent<ArmourManager>();
+    }
+
     void Start()
     {
         StartPhase();
@@ -27,6 +33,7 @@ public class GameManager : MonoBehaviour
         currentSpawner = Instantiate(collectableSpawner, spawnerPosition ,Quaternion.identity);
         upgradeUI.SetActive(false);
         earthAnim.SetBool("isGameRunning", true);
+        armourManager.ResetArmour();
     }
 
     void PauseGame ()
