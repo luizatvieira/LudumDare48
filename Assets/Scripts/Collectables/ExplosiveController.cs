@@ -18,7 +18,7 @@ public class ExplosiveController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int damage = Random.Range(0,1);
+        int damage = Random.Range(0,2);
         spriteRenderer.sprite = explosiveSprite[damage];
     }
 
