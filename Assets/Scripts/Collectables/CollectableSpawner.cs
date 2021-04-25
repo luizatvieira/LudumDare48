@@ -33,8 +33,6 @@ public class CollectableSpawner : MonoBehaviour
 
             int chance = Random.Range(0,100);
 
-            Debug.Log(chance);
-
             if ( chance <= gemChance ) {
                 chosen = 0;
             } else if ( chance <= fuelChance ) {
@@ -45,7 +43,7 @@ public class CollectableSpawner : MonoBehaviour
             }
 
             GameObject collectable = Instantiate( collectables[ chosen ], new Vector3( transform.position.x+location, transform.position.y, 0), Quaternion.identity );
-            if (chosen == 1) 
+            if (chosen == 0) 
             {
                 GemController gem = collectable.GetComponent<GemController>();
                 gem.DefineGem( (int)Time.deltaTime );
