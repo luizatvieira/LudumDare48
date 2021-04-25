@@ -9,13 +9,17 @@ public class MoneyManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI moneyText;
     [SerializeField] private GameObject upgadeArmourButton;
     [SerializeField] private TextMeshProUGUI armourUpText;
+    [SerializeField] private TextMeshProUGUI fuelUpText;
     private ArmourManager armourManager;
+    private FuelManager fuelManager;
     private int currentMoney;
     private int armourCost;
+    private int fuelCost;
 
     void Awake()
     {
         armourManager = GetComponent<ArmourManager>();
+        fuelManager = GetComponent<FuelManager>();
     }
 
     // Start is called before the first frame update
@@ -23,6 +27,7 @@ public class MoneyManager : MonoBehaviour
     {
         currentMoney = 0;
         armourCost = 100;
+        fuelCost = 300;
     }
 
     private void DecMoney( int value )
@@ -42,6 +47,7 @@ public class MoneyManager : MonoBehaviour
         if ( currentMoney >= armourCost )
         {
             currentMoney -= armourCost;
+            moneyText.text = currentMoney.ToString();
             armourManager.AddArmour();
             armourCost = armourCost*3;
             if ( armourManager.maxArmour > 5 ) 
@@ -53,6 +59,18 @@ public class MoneyManager : MonoBehaviour
             {
                 armourUpText.text = "$ "+armourCost.ToString();
             }
+        }
+    }
+
+    public void BuyFueld()
+    {
+        if ( currentMoney >= fuelCost )
+        {
+            currentMoney -= fuelCost;
+            moneyText.text = currentMoney.ToString();
+            fuelCost = fuelCost*5;
+            fuelUpText.text = "$ "+fuelCost.ToString();
+            fuelManager.UpgradeFuel();
         }
     }
 
