@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public bool isGameRunning;
+
     [SerializeField] private GameObject collectableSpawner;
     [SerializeField] private Animator earthAnim;
     [SerializeField] private AudioSource audioSource;
@@ -24,21 +26,22 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         fuelChance = 70;
+        isGameRunning = false;
         StartPhase();
     }
 
     public void EndPhase ()
     {
+        isGameRunning = false;
         Destroy(currentSpawner);
         upgradeUI.SetActive(true);
         earthAnim.SetBool("isGameRunning", false);
         SoundManager.StopAudioSource(audioSource);
-        fuelManager.isGameRunning = false;
     }
 
     public void StartPhase()
     {
-        fuelManager.isGameRunning = true;
+        isGameRunning = true;
         currentSpawner = Instantiate(collectableSpawner, spawnerPosition ,Quaternion.identity);
         currentSpawner.GetComponent<CollectableSpawner>().fuelChance = fuelChance;
         upgradeUI.SetActive(false);

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GemController : MonoBehaviour
 {
+    private GameManager gameManager;
     [SerializeField] private Sprite[] gemSprite;
     private SpriteRenderer spriteRenderer;
     private int value;
@@ -19,6 +20,7 @@ public class GemController : MonoBehaviour
     void Awake()
     {
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        gameManager = FindObjectOfType<GameManager>();
         moneyManager = FindObjectOfType<MoneyManager>();
         spriteRenderer.sprite = gemSprite[0];
     }
@@ -48,7 +50,7 @@ public class GemController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && gameManager.isGameRunning )
         {
             SoundManager.PlaySound( SoundManager.Sound.Collect);
             moneyManager.AddMoney( value );

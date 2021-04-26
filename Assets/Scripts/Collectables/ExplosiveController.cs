@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ExplosiveController : MonoBehaviour
 {
+    private GameManager gameManager;
     [SerializeField] private Sprite[] explosiveSprite;
     private SpriteRenderer spriteRenderer;
     private ArmourManager armourManager;
@@ -12,6 +13,7 @@ public class ExplosiveController : MonoBehaviour
     void Awake()
     {
         armourManager = FindObjectOfType<ArmourManager>();
+        gameManager = FindObjectOfType<GameManager>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
@@ -25,7 +27,7 @@ public class ExplosiveController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && gameManager.isGameRunning )
         {
             SoundManager.PlaySound( SoundManager.Sound.Explode);
             armourManager.DecArmour( damage+1 );

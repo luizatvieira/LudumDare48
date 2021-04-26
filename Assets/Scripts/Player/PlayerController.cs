@@ -5,14 +5,13 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    
+    private GameManager gameManager;
     private float movement;
     private float movementSpeed = 3;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     private void OnMove( InputValue movementValue )
@@ -50,7 +49,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = transform.position + new Vector3( movement*movementSpeed*Time.deltaTime, 0f, 0f );
+        if ( gameManager.isGameRunning )
+        {
+            transform.position = transform.position + new Vector3( movement*movementSpeed*Time.deltaTime, 0f, 0f );
         //HandeRotation();
+        }
     }
 }

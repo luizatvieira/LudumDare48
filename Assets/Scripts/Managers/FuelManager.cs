@@ -10,7 +10,6 @@ public class FuelManager : MonoBehaviour
     private float currentFuel;
     [SerializeField] private float usedFuel = 1f;
     [SerializeField] private float maxFuel = 100;
-    public bool isGameRunning;
 
     void Awake()
     {
@@ -21,7 +20,6 @@ public class FuelManager : MonoBehaviour
     void Start()
     {
         currentFuel = maxFuel;
-        isGameRunning = true;
         InvokeRepeating( "DecFuel", 3f, 0.5f );
     }
 
@@ -32,7 +30,7 @@ public class FuelManager : MonoBehaviour
 
     private void DecFuel()
     {
-        if ( isGameRunning ) 
+        if ( gameManager.isGameRunning ) 
         {
             currentFuel -= usedFuel;
             slider.value = currentFuel/maxFuel;
