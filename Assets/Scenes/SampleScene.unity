@@ -2215,7 +2215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 845229325}
   - component: {fileID: 845229326}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pathSpriteFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2673,7 +2673,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1044256144}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5967025, y: 0.5727629, z: -6.3000016}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3311,7 +3311,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1328800400}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ScreenLimits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3326,7 +3326,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1328800399}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1729858, y: -1.1399068, z: -33.930687}
+  m_LocalPosition: {x: -1.1729858, y: -1.1399068, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1355618908}
@@ -3553,7 +3553,7 @@ GameObject:
   - component: {fileID: 1355618908}
   - component: {fileID: 1355618907}
   - component: {fileID: 1355618906}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4412,7 +4412,7 @@ GameObject:
   - component: {fileID: 1654062976}
   - component: {fileID: 1654062977}
   - component: {fileID: 1654062978}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -4887,7 +4887,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1765688678}
   - component: {fileID: 1765688679}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pathSpriteBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5072,7 +5072,7 @@ GameObject:
   - component: {fileID: 1810627415}
   - component: {fileID: 1810627414}
   - component: {fileID: 1810627413}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5408,7 +5408,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2039853617}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerPath
   m_TagString: Untagged
   m_Icon: {fileID: 0}
