@@ -17,6 +17,17 @@ public class GameAssets : MonoBehaviour
         }
     }
 
+    public void DestroyGameObject( GameObject soundGameObject  )
+    {
+        StartCoroutine(DestroySound(soundGameObject));
+    }
+
+    private IEnumerator DestroySound( GameObject soundGameObject )
+    {
+        yield return new WaitForSeconds(2);
+        Destroy(soundGameObject);
+    }
+
     [System.Serializable]
     public class SoundAudioClip
     {

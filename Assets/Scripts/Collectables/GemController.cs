@@ -30,7 +30,6 @@ public class GemController : MonoBehaviour
         int valueMultiplier = Random.Range(1,5);
         int chosen = 0;
         value = valueMultiplier * ( time );
-        Debug.Log(time);
         
         if ( value < rockValue) {
             chosen = 0;
