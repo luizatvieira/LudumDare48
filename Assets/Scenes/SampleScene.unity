@@ -2665,7 +2665,6 @@ MonoBehaviour:
   slider: {fileID: 1002974781}
   usedFuel: 1
   maxFuel: 100
-  isGameRunning: 0
 --- !u!4 &1044256146
 Transform:
   m_ObjectHideFlags: 0
@@ -2713,6 +2712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14b46cc081bd6b7498c126bc1c22efea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGameRunning: 0
   collectableSpawner: {fileID: 1900037411361920843, guid: e3d8b28cfcb9f3145b87947285a06020, type: 3}
   earthAnim: {fileID: 2071191122}
   audioSource: {fileID: 1304121295}

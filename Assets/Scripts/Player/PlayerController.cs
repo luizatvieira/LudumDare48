@@ -24,24 +24,17 @@ public class PlayerController : MonoBehaviour
     {
         if ( transform.eulerAngles.z != 0f && movement == 0 )
         {
-            if (transform.eulerAngles.z > 0 )
-            {
-                transform.eulerAngles -= new Vector3(0,0,1f);
-            } 
-            else if (transform.eulerAngles.z < 0 )
-            {
-                transform.eulerAngles += new Vector3(0,0,1f);
-            }
+            transform.eulerAngles = new Vector3(0,0,0);
         }
         else if ( movement != 0 )
         {
-            if ( (transform.eulerAngles.z < 30f && movement > 0) )
+            if (  movement > 0 )
             {
-                transform.eulerAngles += new Vector3(0,0,1f);
+                transform.eulerAngles = new Vector3(0,0,30);
             }
-            else if ( transform.eulerAngles.z > -30f && movement < 0 )
+            else
             {
-                transform.eulerAngles -= new Vector3(0,0,1f);
+                transform.eulerAngles = new Vector3(0,0,-30);
             }
         }
     }
@@ -52,7 +45,7 @@ public class PlayerController : MonoBehaviour
         if ( gameManager.isGameRunning )
         {
             transform.position = transform.position + new Vector3( movement*movementSpeed*Time.deltaTime, 0f, 0f );
-        //HandeRotation();
+            HandeRotation();
         }
     }
 }
