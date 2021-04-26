@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject collectableSpawner;
     [SerializeField] private Animator earthAnim;
+    [SerializeField] private AudioSource audioSource;
     [SerializeField] private GameObject upgradeUI;
     private GameObject currentSpawner;
     private ArmourManager armourManager;
@@ -31,6 +32,7 @@ public class GameManager : MonoBehaviour
         Destroy(currentSpawner);
         upgradeUI.SetActive(true);
         earthAnim.SetBool("isGameRunning", false);
+        SoundManager.StopAudioSource(audioSource);
         fuelManager.isGameRunning = false;
     }
 
@@ -41,6 +43,7 @@ public class GameManager : MonoBehaviour
         currentSpawner.GetComponent<CollectableSpawner>().fuelChance = fuelChance;
         upgradeUI.SetActive(false);
         earthAnim.SetBool("isGameRunning", true);
+        SoundManager.PlayAudioSource(audioSource);
         armourManager.ResetArmour();
         fuelManager.ResetFuel();
     }

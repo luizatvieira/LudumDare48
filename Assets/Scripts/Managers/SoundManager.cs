@@ -11,6 +11,16 @@ public static class SoundManager
         Drill
     }
 
+    public static void StopAudioSource ( AudioSource audioSource )
+    {
+        audioSource.Stop();
+    }
+
+    public static void PlayAudioSource ( AudioSource audioSource )
+    {
+        audioSource.Play();
+    }
+
     public static void PlaySound( Sound sound )
     {
         GameObject soundGameObject = new GameObject("Sound");

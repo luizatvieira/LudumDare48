@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 public class ArmourManager : MonoBehaviour
 {
@@ -17,6 +17,10 @@ public class ArmourManager : MonoBehaviour
     public void ResetArmour()
     {
         currentArmour = maxArmour;
+        for ( int i = 0; i < maxArmour; i++ )
+        {
+            armourIcons[i].GetComponent<Image>().color = new Color(1, 1, 1, 1);
+        }
     }
     public void AddArmour()
     {
@@ -30,7 +34,7 @@ public class ArmourManager : MonoBehaviour
     {
         for ( int i = currentArmour; i >= currentArmour- damage && i > 0; i-- )
         {
-            armourIcons[i].GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 1);
+            armourIcons[i-1].GetComponent<Image>().color = new Color(0, 0, 0, 1);
         }
         currentArmour -= damage;
         if( currentArmour <= 0 )
