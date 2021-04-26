@@ -48,7 +48,7 @@ public class CollectableSpawner : MonoBehaviour
             if (chosen == 0) 
             {
                 GemController gem = collectable.GetComponent<GemController>();
-                gem.DefineGem( (int)Time.deltaTime );
+                gem.DefineGem( (int)(Time.frameCount/60) );
             }
         }
     }

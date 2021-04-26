@@ -27,10 +27,11 @@ public class GemController : MonoBehaviour
 
     public void DefineGem( int time ) 
     {
-        int valueMultiplier = Random.Range(0,100);
+        int valueMultiplier = Random.Range(1,5);
         int chosen = 0;
-        value = valueMultiplier * ( 1 + time );
-
+        value = valueMultiplier * ( time );
+        Debug.Log(time);
+        
         if ( value < rockValue) {
             chosen = 0;
         } else if ( value < copperValue ) {
