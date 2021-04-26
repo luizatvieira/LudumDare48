@@ -15,6 +15,7 @@ public class FuelController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            SoundManager.PlaySound( SoundManager.Sound.Collect);
             fuelManager.AddFuel( Random.Range(0,50) );
         }
         Destroy(gameObject);

@@ -27,6 +27,7 @@ public class ExplosiveController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            SoundManager.PlaySound( SoundManager.Sound.Explode);
             armourManager.DecArmour( damage+1 );
         }
         Destroy(gameObject);

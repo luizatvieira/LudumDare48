@@ -50,6 +50,7 @@ public class GemController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            SoundManager.PlaySound( SoundManager.Sound.Collect);
             moneyManager.AddMoney( value );
         }
         Destroy(gameObject);

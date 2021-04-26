@@ -65,6 +65,7 @@ public class MoneyManager : MonoBehaviour
             } 
             else 
             {
+                SoundManager.PlaySound( SoundManager.Sound.Buy);
                 currentMoney -= armourCost;
                 moneyText.text = currentMoney.ToString();
                 armourManager.AddArmour();
@@ -82,6 +83,7 @@ public class MoneyManager : MonoBehaviour
     {
         if ( currentMoney >= fuelCost )
         {
+            SoundManager.PlaySound( SoundManager.Sound.Buy);
             currentMoney -= fuelCost;
             moneyText.text = currentMoney.ToString();
             fuelCost = fuelCost*5;
@@ -100,6 +102,7 @@ public class MoneyManager : MonoBehaviour
         {
             if ( gameManager.fuelChance < 90 )
             {
+                SoundManager.PlaySound( SoundManager.Sound.Buy);
                 currentMoney -= safetyCost;
                 moneyText.text = currentMoney.ToString();
                 safetyCost = safetyCost*safetyCost;
