@@ -19,6 +19,7 @@ public class ExplosiveController : MonoBehaviour
     void Start()
     {
         int damage = Random.Range(0,2);
+        //Debug.Log(damage);
         spriteRenderer.sprite = explosiveSprite[damage];
     }
 

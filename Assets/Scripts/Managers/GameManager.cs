@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        fuelChance = 70;
         StartPhase();
     }
 

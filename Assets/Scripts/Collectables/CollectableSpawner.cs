@@ -21,7 +21,10 @@ public class CollectableSpawner : MonoBehaviour
 
     private void AdjustSpawnTime ()
     {
-        spawnTime -= 0.01f;
+        if ( spawnTime > 0.1 )
+        {
+            spawnTime -= 0.01f;
+        }
     }
 
     private IEnumerator SpawnCollectables ()
@@ -29,7 +32,7 @@ public class CollectableSpawner : MonoBehaviour
         while (true) {
             yield return new WaitForSeconds(spawnTime);
             int chosen = 0;
-            float location = Random.Range(-10,10 );
+            float location = Random.Range( -9, 9 );
 
             int chance = Random.Range(0,100);
 
@@ -41,7 +44,6 @@ public class CollectableSpawner : MonoBehaviour
             {
                 chosen = 2;
             }
-
             GameObject collectable = Instantiate( collectables[ chosen ], new Vector3( transform.position.x+location, transform.position.y, 0), Quaternion.identity );
             if (chosen == 0) 
             {

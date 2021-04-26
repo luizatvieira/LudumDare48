@@ -98,13 +98,13 @@ public class MoneyManager : MonoBehaviour
     {
         if ( currentMoney >= safetyCost )
         {
-            if ( gameManager.fuelChance < 100 )
+            if ( gameManager.fuelChance < 90 )
             {
                 currentMoney -= safetyCost;
                 moneyText.text = currentMoney.ToString();
                 safetyCost = safetyCost*safetyCost;
                 safetyUpText.text = "$ "+safetyCost.ToString();
-                gameManager.fuelChance += 10;
+                gameManager.fuelChance += 5;
             } else {
                 upgadeSafetyButton.GetComponent<Image>().color = new Color( 140, 123, 64, 1);
                 safetyUpText.text = "SOLD OUT";
