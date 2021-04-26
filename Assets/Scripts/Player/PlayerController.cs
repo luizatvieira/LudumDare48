@@ -21,9 +21,36 @@ public class PlayerController : MonoBehaviour
         movement = movementVector.x;
     }
 
+    private void HandeRotation ()
+    {
+        if ( transform.eulerAngles.z != 0f && movement == 0 )
+        {
+            if (transform.eulerAngles.z > 0 )
+            {
+                transform.eulerAngles -= new Vector3(0,0,1f);
+            } 
+            else if (transform.eulerAngles.z < 0 )
+            {
+                transform.eulerAngles += new Vector3(0,0,1f);
+            }
+        }
+        else if ( movement != 0 )
+        {
+            if ( (transform.eulerAngles.z < 30f && movement > 0) )
+            {
+                transform.eulerAngles += new Vector3(0,0,1f);
+            }
+            else if ( transform.eulerAngles.z > -30f && movement < 0 )
+            {
+                transform.eulerAngles -= new Vector3(0,0,1f);
+            }
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
         transform.position = transform.position + new Vector3( movement*movementSpeed*Time.deltaTime, 0f, 0f );
+        HandeRotation();
     }
 }

@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ArmourManager : MonoBehaviour
 {
     public int maxArmour = 0;
     private int currentArmour = 0;
     private GameManager gameManager;
     [SerializeField] private GameObject armourIcon;
-    private GameObject[] armourIcons = new GameObject[5];
+    [SerializeField] private GameObject[] armourIcons = new GameObject[5];
 
     void Awake()
     {
@@ -23,7 +24,7 @@ public class ArmourManager : MonoBehaviour
         if (maxArmour<5)
         {
             maxArmour += 1;
-            armourIcons[maxArmour-1] = Instantiate( armourIcon, new Vector3( -11.7f + (float) maxArmour, 3.3f,0 ) ,Quaternion.identity);
+            armourIcons[maxArmour-1].SetActive(true);
         }
     }
     public void DecArmour( int damage )
