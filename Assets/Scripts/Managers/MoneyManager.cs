@@ -105,7 +105,7 @@ public class MoneyManager : MonoBehaviour
                 SoundManager.PlaySound( SoundManager.Sound.Buy);
                 currentMoney -= safetyCost;
                 moneyText.text = currentMoney.ToString();
-                safetyCost = safetyCost*safetyCost;
+                safetyCost = safetyCost*9;
                 safetyUpText.text = "$ "+safetyCost.ToString();
                 gameManager.fuelChance += 5;
             } else {
