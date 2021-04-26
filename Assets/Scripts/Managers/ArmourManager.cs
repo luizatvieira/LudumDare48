@@ -32,12 +32,12 @@ public class ArmourManager : MonoBehaviour
     }
     public void DecArmour( int damage )
     {
-        for ( int i = currentArmour; i >= currentArmour- damage && i > 0; i-- )
+        for ( int i = currentArmour; i > currentArmour - damage && i > 0; i-- )
         {
             armourIcons[i-1].GetComponent<Image>().color = new Color(0, 0, 0, 1);
         }
         currentArmour -= damage;
-        if( currentArmour <= 0 )
+        if( currentArmour < 0 )
         {
             gameManager.EndPhase();
         }
