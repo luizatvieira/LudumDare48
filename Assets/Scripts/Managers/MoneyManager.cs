@@ -12,6 +12,11 @@ public class MoneyManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI armourUpText;
     [SerializeField] private TextMeshProUGUI fuelUpText;
     [SerializeField] private TextMeshProUGUI safetyUpText;
+
+    [SerializeField] private GameObject warning1Text;
+    [SerializeField] private GameObject warning2Text;
+    [SerializeField] private GameObject warning3Text;
+
     private GameManager gameManager;
     private ArmourManager armourManager;
     private FuelManager fuelManager;
@@ -66,6 +71,10 @@ public class MoneyManager : MonoBehaviour
                 armourCost = armourCost*3;
                 armourUpText.text = "$ "+armourCost.ToString();
             }
+        } 
+        else 
+        {
+            StartCoroutine( MoneyWarning(warning1Text) );
         }
     }
 
@@ -78,6 +87,10 @@ public class MoneyManager : MonoBehaviour
             fuelCost = fuelCost*5;
             fuelUpText.text = "$ "+fuelCost.ToString();
             fuelManager.UpgradeFuel();
+        }
+        else 
+        {
+            StartCoroutine( MoneyWarning(warning2Text) );
         }
     }
 
@@ -97,6 +110,16 @@ public class MoneyManager : MonoBehaviour
                 safetyUpText.text = "SOLD OUT";
             }
         }
+        else 
+        {
+            StartCoroutine( MoneyWarning(warning3Text) );
+        }
     }
 
+    IEnumerator MoneyWarning ( GameObject warning )
+    {
+        warning.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        warning.SetActive(false);
+    }
 }

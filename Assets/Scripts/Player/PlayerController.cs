@@ -51,6 +51,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         transform.position = transform.position + new Vector3( movement*movementSpeed*Time.deltaTime, 0f, 0f );
-        HandeRotation();
+        //HandeRotation();
     }
 }

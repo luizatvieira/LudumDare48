@@ -8,7 +8,6 @@ public class ArmourManager : MonoBehaviour
     public int maxArmour = 0;
     private int currentArmour = 0;
     private GameManager gameManager;
-    [SerializeField] private GameObject armourIcon;
     [SerializeField] private GameObject[] armourIcons = new GameObject[5];
 
     void Awake()
